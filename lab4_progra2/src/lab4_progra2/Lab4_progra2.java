@@ -22,7 +22,7 @@ public class Lab4_progra2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+$
         Scanner lectura = new Scanner(System.in);
         ArrayList<Persona> lista_persona = new ArrayList();
         ArrayList<Almacen> lista_almacen = new ArrayList();
