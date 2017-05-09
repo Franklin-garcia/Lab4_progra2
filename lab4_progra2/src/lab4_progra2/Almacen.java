@@ -87,13 +87,13 @@ public abstract class Almacen {
 
     public abstract String binario();
 
-    public abstract void vigenere();
+    public abstract void vigenere(String codigo, String clave);
 
     public abstract void adelantaposiciones();
 
     public abstract void encriptadomatrices();
 
-    public abstract void declaraciondealfabeto();
+    public abstract String declaraciondealfabeto(String codigo);
     
 
 }
