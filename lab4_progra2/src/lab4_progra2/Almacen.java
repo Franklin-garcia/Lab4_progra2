@@ -77,15 +77,16 @@ public abstract class Almacen {
 
     public abstract String[][] transposicion(String codigo, String claves);
 
-    public abstract String binario();
+    public abstract String binario(String codigo);
 
     public abstract void vigenere(String codigo, String clave);
 
-    public abstract void adelantaposiciones();
+    public abstract int adelantaposiciones(String codigo);
 
     public abstract void encriptadomatrices();
 
     public abstract String declaraciondealfabeto(String codigo);
+    
     
 
 }

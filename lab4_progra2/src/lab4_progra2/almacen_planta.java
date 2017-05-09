@@ -78,6 +78,7 @@ public class almacen_planta extends Almacen {
         return encriptar;
 
     }
+    
 
     @Override
     public String[][] transposicion(String codigo, String clave) {
