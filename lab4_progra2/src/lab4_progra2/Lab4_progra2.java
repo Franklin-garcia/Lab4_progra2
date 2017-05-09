@@ -22,11 +22,8 @@ public class Lab4_progra2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-<<<<<<< HEAD
 
-=======
         Scanner lectura = new Scanner(System.in);
->>>>>>> 0895af97fab561a00299bb062c1ec44f7a510a10
         ArrayList<Persona> lista_persona = new ArrayList();
         ArrayList<Almacen> lista_almacen = new ArrayList();
         ArrayList<Producto> lista_producto = new ArrayList();
