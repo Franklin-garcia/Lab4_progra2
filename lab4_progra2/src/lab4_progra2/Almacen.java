@@ -81,7 +81,7 @@ public abstract class Almacen {
         return "Almacen{" + "lista_cargador=" + lista_cargador + ", lista_empleado=" + lista_empleado + ", lista_producot=" + lista_producot + ", tama\u00f1o_metros=" + tamaño_metros + ", altura=" + altura + ", lista_clientes=" + lista_clientes + '}';
     }
 
-    public abstract String riel();
+    public abstract String[][] riel(String codigo);
 
     public abstract String transposicion();
 
@@ -94,5 +94,6 @@ public abstract class Almacen {
     public abstract void encriptadomatrices();
 
     public abstract void declaraciondealfabeto();
+    
 
 }
