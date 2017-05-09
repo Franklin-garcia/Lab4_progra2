@@ -91,7 +91,7 @@ public class Lab4_progra2 {
 
             }
         }
->>>>>>> 4437e5c7da6b69a5d3d7c0a9b347324e92d8a72b
+
     }
 
 }

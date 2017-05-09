@@ -5,6 +5,7 @@
  */
 package lab4_progra2;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -42,7 +43,7 @@ public class almacen_planta extends Almacen {
 
         Random rn = new Random();
         String[][] encriptar = new String[codigo.length()][codigo.length()];
-        
+
         int[] pos = new int[codigo.length()];
         for (int i = 0; i < pos.length; i++) {
             pos[i] = rn.nextInt(pos.length);
@@ -63,14 +64,46 @@ public class almacen_planta extends Almacen {
             }
             encriptar[i][pos[i]] = "" + codigo.charAt(i);
         }
-        
+
         return encriptar;
 
     }
 
     @Override
-    public String transposicion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String[][] transposicion(String codigo,String clave) {
+        Random rn = new Random();
+        String[][] transposicion = new String[codigo.length()][codigo.length()];
+        
+        int[] pos = new int[codigo.length()];
+        
+        for (int i = 0; i < pos.length; i++) {
+            pos[i] = rn.nextInt(pos.length);
+            for (int j = 0; j < i; j++) {
+                
+                if (pos[j] == pos[i]) {
+                    pos[i] = rn.nextInt(pos.length);
+                    j = -1;
+                    
+                }
+
+            }
+
+        }
+        
+        
+        String abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (int i = 0; i < codigo.length(); i++) {
+            for (int j = 0; j < codigo.length(); j++) {
+                transposicion[i][j] = "" + abc.charAt(rn.nextInt(26));
+            }
+        }
+        for (int i = 0; i < codigo.length(); i++) {
+            transposicion[pos[0]][i] = "" + codigo.charAt(i);
+            transposicion[pos[1]][i] = "" + clave.charAt(i);
+        }
+        
+        return transposicion;
+        
     }
 
     @Override
