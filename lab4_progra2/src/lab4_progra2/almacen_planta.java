@@ -81,40 +81,54 @@ public class almacen_planta extends Almacen {
     
 
     @Override
-    public String[][] transposicion(String codigo, String clave) {
-        Random rn = new Random();
-        String[][] transposicion = new String[codigo.length()][codigo.length()];
+    public String transposicion(String codigo, String clave) {
+        
+      
+        String transpos= "";
 
-        int[] pos = new int[codigo.length()];
-
-        for (int i = 0; i < pos.length; i++) {
-            pos[i] = rn.nextInt(pos.length);
-            for (int j = 0; j < i; j++) {
-
-                if (pos[j] == pos[i]) {
-                    pos[i] = rn.nextInt(pos.length);
-                    j = -1;
-
-                }
-
-            }
-
-        }
 
         String abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for (int i = 0; i < codigo.length(); i++) {
-            for (int j = 0; j < codigo.length(); j++) {
-                transposicion[i][j] = "" + abc.charAt(rn.nextInt(26));
+            char letra = codigo.charAt(i);
+            char letra2 = codigo.charAt(i);
+            
+            int pos = (letra - 65) + (letra -65);
+            
+            if(pos>26){
+                pos-=26;
             }
-        }
-        for (int i = 0; i < codigo.length(); i++) {
-            transposicion[pos[0]][i] = "" + codigo.charAt(i);
-            transposicion[pos[1]][i] = "" + clave.charAt(i);
+            
+            transpos = "" + abc.charAt(pos);
+            
         }
 
-        return transposicion;
+        return transpos;
 
     }
+    public String revertransposicion(String codigo, String clave){
+        String transpos= "";
+
+
+        String abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (int i = 0; i < codigo.length(); i++) {
+            char letra = codigo.charAt(i);
+            char letra2 = codigo.charAt(i);
+            
+            int pos = (letra - 65) - (letra -65);
+            
+            if(pos<0){
+                pos+=26;
+            }
+            
+            transpos = "" + abc.charAt(pos);
+            
+        }
+
+        return transpos;
+        
+        
+    }
+    
 
     @Override
     public String binario(String codigo) {
@@ -129,11 +143,7 @@ public class almacen_planta extends Almacen {
         }
         return nuevo;
     }
-
-    @Override
-    public void vigenere(String codigo, String clave) {
-
-    }
+    
 
     private int random_adelanta() {
         Random ran = new Random();
@@ -142,6 +152,7 @@ public class almacen_planta extends Almacen {
         return tamaño;
     }
 
+    @Override
     public String adelantaposiciones(int tamaño, String codigo) {
         String corrido = " ";
         for (int i = 0; i < codigo.length(); i++) {
@@ -155,14 +166,10 @@ public class almacen_planta extends Almacen {
         return corrido.replaceAll("$", " ");
     }
 
-    @Override
-    public void encriptadomatrices() {
-
-    }
 
     @Override
     public String declaraciondealfabeto(String codigo) {
-        codigo = codigo.toLowerCase();
+        codigo = codigo.toUpperCase();
         Random rn = new Random();
         String newcodigo = "";
         for (int i = 0; i < codigo.charAt(i); i++) {
