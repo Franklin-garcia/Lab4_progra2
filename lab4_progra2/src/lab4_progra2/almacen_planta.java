@@ -47,7 +47,7 @@ public class almacen_planta extends Almacen {
 
         int suma = 1;
         int cont = 0;
-        
+
         for (int i = 0; i < codigo.length(); i++) {
             pos[i] = cont;
 
@@ -117,18 +117,42 @@ public class almacen_planta extends Almacen {
     }
 
     @Override
-    public String binario() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String binario(String codigo) {
+        String nuevo_codigo="",nuevo="";
+        for (int i = codigo.length()-1; i >0 ; i--) {
+             nuevo_codigo+=codigo.charAt(i); 
+        }
+        int x=0;
+        for (int i = 0; i < nuevo_codigo.length(); i++) {
+               x=nuevo_codigo.charAt(i);
+               nuevo=Integer.toBinaryString(x);
+        }
+        return nuevo;
     }
 
     @Override
     public void vigenere(String codigo, String clave) {
-        
+
     }
 
-    @Override
-    public void adelantaposiciones() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private int random_adelanta() {
+        Random ran = new Random();
+
+        int tamaño = 1 + ran.nextInt(9);
+        return tamaño;
+    }
+
+    public String adelantaposiciones(int tamaño, String codigo) {
+        String corrido = " ";
+        for (int i = 0; i < codigo.length(); i++) {
+            char a = (char) (codigo.charAt(i) + tamaño);
+            if (codigo.charAt(i) == ' ') {
+                corrido += " ";
+            } else {
+                corrido += a;
+            }
+        }
+        return corrido.replaceAll("$", " ");
     }
 
     @Override
