@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package clase.objetos.pkg1;
+package lab4_progra2;
 
 /**
  *
  * @author Franklin Garcia
  */
 public class Persona {
-     private String nombre;
-     private String id; 
-     private int Edad; 
-     private int altura;
-     private int peso; 
-     private String residencia;
+
+    private String nombre;
+    private String id;
+    private int Edad;
+    private int altura;
+    private int peso;
+    private String residencia;
 
     public Persona() {
     }
@@ -81,5 +82,5 @@ public class Persona {
     public String toString() {
         return "Persona{" + "nombre=" + nombre + ", id=" + id + ", Edad=" + Edad + ", altura=" + altura + ", peso=" + peso + ", residencia=" + residencia + '}';
     }
-     
+
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package clase.objetos.pkg1;
+package lab4_progra2;
 
 import java.util.ArrayList;
 
@@ -12,8 +12,8 @@ import java.util.ArrayList;
  * @author Franklin Garcia
  */
 public class Almacen {
-    private ArrayList<Cargador>lista_cargador=new ArrayList();
-    private ArrayList<Empleado>lista_empleado=new ArrayList();
+    private ArrayList<empleado_carga>lista_cargador=new ArrayList();
+    private ArrayList<empleado_seguridad>lista_empleado=new ArrayList();
     private ArrayList<Producto>lista_producot=new ArrayList();
     private int tamaño_metros;
     private int altura;
@@ -27,19 +27,19 @@ public class Almacen {
         this.altura = altura;
     }
 
-    public ArrayList<Cargador> getLista_cargador() {
+    public ArrayList<empleado_carga> getLista_cargador() {
         return lista_cargador;
     }
 
-    public void setLista_cargador(ArrayList<Cargador> lista_cargador) {
+    public void setLista_cargador(ArrayList<empleado_carga> lista_cargador) {
         this.lista_cargador = lista_cargador;
     }
 
-    public ArrayList<Empleado> getLista_empleado() {
+    public ArrayList<empleado_seguridad> getLista_empleado() {
         return lista_empleado;
     }
 
-    public void setLista_empleado(ArrayList<Empleado> lista_empleado) {
+    public void setLista_empleado(ArrayList<empleado_seguridad> lista_empleado) {
         this.lista_empleado = lista_empleado;
     }
 
@@ -74,6 +74,7 @@ public class Almacen {
     public void setLista_clientes(ArrayList<Cliente> lista_clientes) {
         this.lista_clientes = lista_clientes;
     }
+
 
     @Override
     public String toString() {

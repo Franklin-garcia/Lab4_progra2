@@ -9,6 +9,11 @@ package lab4_progra2;
  *
  * @author Franklin Garcia
  */
-public class almacen_temporal extends Almacen{
+public class empleado_seguridad extends Empleado{
+
+    private String contrasena;
+    
+    public empleado_seguridad() {
+    }
     
 }
