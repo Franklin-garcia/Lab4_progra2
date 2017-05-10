@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  *
- * @author Franklin Garcia
+ * @author Franklin Garcia && Delmer Izaguirre
  */
 public class Cliente extends Persona{
     private int dinero;
