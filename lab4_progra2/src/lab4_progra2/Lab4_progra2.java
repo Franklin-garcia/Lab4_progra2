@@ -22,7 +22,10 @@ public class Lab4_progra2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+<<<<<<< HEAD
         
+=======
+>>>>>>> 806eb265b78c99c0dd757b644e5ebf6b597663b1
         Scanner lectura = new Scanner(System.in);
         ArrayList<Persona> lista_persona = new ArrayList();
         ArrayList<Almacen> lista_almacen = new ArrayList();
@@ -374,14 +377,154 @@ public class Lab4_progra2 {
                             String oo = JOptionPane.showInputDialog("Ingrese opcion \n"
                                     + "1-Empleado de carta"
                                     + "2-Empleado de seguridad");
-                            switch(oo){
-                                
+                            switch (oo) {
+                                case "1": {
+                                    String i = JOptionPane.showInputDialog("Ingrese opcion \n"
+                                            + "1-Agregar \n"
+                                            + "2-Modificar \n"
+                                            + "3-Eliminar");
+                                    switch (i) {
+                                        case "1": {
+                                            String nombre = JOptionPane.showInputDialog("Nombre");
+                                            String id = JOptionPane.showInputDialog("ID");
+                                            int edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+                                            int altura = Integer.parseInt(JOptionPane.showInputDialog("altura"));
+                                            int peso = Integer.parseInt(JOptionPane.showInputDialog("Peso"));
+                                            String residencia = JOptionPane.showInputDialog("Residencia");
+
+                                            int entrada = Integer.parseInt(JOptionPane.showInputDialog("Entrada"));
+                                            int salida = Integer.parseInt(JOptionPane.showInputDialog("Salida"));
+                                            JOptionPane.showMessageDialog(null, "Fecha en la que compro su primer producto");
+                                            int dia = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dia de emision"));
+                                            int mes = Integer.parseInt(JOptionPane.showInputDialog("Ingrese mes de emision"));
+                                            int año = Integer.parseInt(JOptionPane.showInputDialog("Ingrese año de emision"));
+                                            Date fecha;
+                                            Calendar c = new GregorianCalendar(año, mes, dia);
+                                            fecha = c.getTime();
+
+                                            lista_persona.add(new empleado_carga(entrada, salida, fecha, nombre, id, edad, altura, peso, residencia));
+                                            JOptionPane.showMessageDialog(null, "Se agrego exitosamente");
+                                        }
+                                        break;
+
+                                        case "2": {
+                                            String u = "";
+                                            for (Persona p : lista_persona) {
+                                                u += "\n" + lista_persona.indexOf(p) + "\n" + p;
+                                            }
+                                            int ps = Integer.parseInt(JOptionPane.showInputDialog("posicion"));
+                                            String nombre = JOptionPane.showInputDialog("Nombre");
+                                            String id = JOptionPane.showInputDialog("ID");
+                                            int edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+                                            int altura = Integer.parseInt(JOptionPane.showInputDialog("altura"));
+                                            int peso = Integer.parseInt(JOptionPane.showInputDialog("Peso"));
+                                            String residencia = JOptionPane.showInputDialog("Residencia");
+
+                                            int entrada = Integer.parseInt(JOptionPane.showInputDialog("Entrada"));
+                                            int salida = Integer.parseInt(JOptionPane.showInputDialog("Salida"));
+                                            JOptionPane.showMessageDialog(null, "Fecha en la que compro su primer producto");
+                                            int dia = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dia de emision"));
+                                            int mes = Integer.parseInt(JOptionPane.showInputDialog("Ingrese mes de emision"));
+                                            int año = Integer.parseInt(JOptionPane.showInputDialog("Ingrese año de emision"));
+                                            Date fecha;
+                                            Calendar c = new GregorianCalendar(año, mes, dia);
+                                            fecha = c.getTime();
+                                            ((Persona) lista_persona.get(ps)).setAltura(altura);
+                                            ((Persona) lista_persona.get(ps)).setEdad(edad);
+                                            ((Persona) lista_persona.get(ps)).setId(id);
+                                            ((Persona) lista_persona.get(ps)).setNombre(nombre);
+                                            ((Persona) lista_persona.get(ps)).setPeso(peso);
+                                            ((Persona) lista_persona.get(ps)).setResidencia(residencia);
+                                            JOptionPane.showMessageDialog(null, "Se modifico con exito");
+                                        }
+                                        break;
+                                        case "3": {
+                                            String g = "";
+                                            for (Persona t : lista_persona) {
+                                                if (t instanceof empleado_carga) {
+                                                    g += "\n" + lista_persona.indexOf(t) + " " + t;
+                                                }
+                                            }
+                                            JOptionPane.showMessageDialog(null, g);
+                                            int p = Integer.parseInt(JOptionPane.showInputDialog("Posicion"));
+                                            lista_persona.remove(p);
+                                            JOptionPane.showMessageDialog(null, "Se elimino con exito");
+                                        }
+                                        break;
+                                    }
+                                }
+                                break;
+
+                                case "2": {
+                                    String i = JOptionPane.showInputDialog("Ingrese opcion \n"
+                                            + "1-Agregar \n"
+                                            + "2-Modificar \n"
+                                            + "3-Eliminar");
+                                    switch (i) {
+                                        case "1": {
+                                            String nombre = JOptionPane.showInputDialog("Nombre");
+                                            String id = JOptionPane.showInputDialog("ID");
+                                            int edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+                                            int altura = Integer.parseInt(JOptionPane.showInputDialog("altura"));
+                                            int peso = Integer.parseInt(JOptionPane.showInputDialog("Peso"));
+                                            String residencia = JOptionPane.showInputDialog("Residencia");
+
+                                        }
+                                        break;
+                                        case "2": {
+                                            String u = "";
+                                            for (Persona p : lista_persona) {
+                                                u += "\n" + lista_persona.indexOf(p) + "\n" + p;
+                                            }
+                                            int ps = Integer.parseInt(JOptionPane.showInputDialog("posicion"));
+                                            String nombre = JOptionPane.showInputDialog("Nombre");
+                                            String id = JOptionPane.showInputDialog("ID");
+                                            int edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+                                            int altura = Integer.parseInt(JOptionPane.showInputDialog("altura"));
+                                            int peso = Integer.parseInt(JOptionPane.showInputDialog("Peso"));
+                                            String residencia = JOptionPane.showInputDialog("Residencia");
+
+                                            int entrada = Integer.parseInt(JOptionPane.showInputDialog("Entrada"));
+                                            int salida = Integer.parseInt(JOptionPane.showInputDialog("Salida"));
+                                            JOptionPane.showMessageDialog(null, "Fecha en la que compro su primer producto");
+                                            int dia = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dia de emision"));
+                                            int mes = Integer.parseInt(JOptionPane.showInputDialog("Ingrese mes de emision"));
+                                            int año = Integer.parseInt(JOptionPane.showInputDialog("Ingrese año de emision"));
+                                            Date fecha;
+                                            Calendar c = new GregorianCalendar(año, mes, dia);
+                                            fecha = c.getTime();
+                                            ((Persona) lista_persona.get(ps)).setAltura(altura);
+                                            ((Persona) lista_persona.get(ps)).setEdad(edad);
+                                            ((Persona) lista_persona.get(ps)).setId(id);
+                                            ((Persona) lista_persona.get(ps)).setNombre(nombre);
+                                            ((Persona) lista_persona.get(ps)).setPeso(peso);
+                                            ((Persona) lista_persona.get(ps)).setResidencia(residencia);
+                                            JOptionPane.showMessageDialog(null, "Se modifico con exito");
+                                        }
+                                        break;
+                                        case "3": {
+                                            String g = "";
+                                            for (Persona t : lista_persona) {
+                                                if (t instanceof empleado_carga) {
+                                                    g += "\n" + lista_persona.indexOf(t) + " " + t;
+                                                }
+                                            }
+                                            JOptionPane.showMessageDialog(null, g);
+                                            int p = Integer.parseInt(JOptionPane.showInputDialog("Posicion"));
+                                            lista_persona.remove(p);
+                                            JOptionPane.showMessageDialog(null, "Se elimino con exito");
+                                        }
+                                        break;
+                                    }
+                                }
+                                break;
                             }
                         }
                         break;
                     }
                 }
                 break;
+
                 case "3": {
                     String oppp = JOptionPane.showInputDialog("Ingrese opcion \n"
                             + "1.Agregar \n"

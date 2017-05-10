@@ -16,7 +16,9 @@ public class empleado_carga extends Empleado{
     private int salida;
     private Date fecha_inico;
     public empleado_carga() {
+        super();
     }
+    
 
     public empleado_carga(int entrada, int salida, Date fecha_inico, String nombre, String id, int Edad, int altura, int peso, String residencia) {
         super(nombre, id, Edad, altura, peso, residencia);
