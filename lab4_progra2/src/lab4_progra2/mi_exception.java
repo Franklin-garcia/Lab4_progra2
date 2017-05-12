@@ -5,10 +5,17 @@
  */
 package lab4_progra2;
 
+import java.awt.Color;
+
 /**
  *
  * @author Franklin Garcia
  */
-public class almacen_temporal extends Almacen{
-    
+public class mi_exception extends Exception {
+
+    public mi_exception(Color color, String message) {
+        super(message);
+
+    }
+
 }
