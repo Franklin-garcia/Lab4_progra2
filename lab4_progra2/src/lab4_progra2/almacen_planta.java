@@ -116,8 +116,17 @@ public class almacen_planta extends Almacen {
     }
 
     @Override
-    public String binario() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String binario(String codigo) {
+        String nuevo_codigo="",nuevo="";
+        for (int i = codigo.length()-1; i >0 ; i--) {
+             nuevo_codigo+=codigo.charAt(i); 
+        }
+        int x=0;
+        for (int i = 0; i < nuevo_codigo.length(); i++) {
+               x=nuevo_codigo.charAt(i);
+               nuevo=Integer.toBinaryString(x);
+        }
+        return nuevo;
     }
 
     @Override

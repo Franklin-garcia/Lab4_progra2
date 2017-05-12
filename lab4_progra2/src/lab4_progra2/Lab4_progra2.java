@@ -292,8 +292,13 @@ public class Lab4_progra2 {
                 }
                 break;
 
-                case "2": {
-
+               case "2": {
+                    String o=JOptionPane.showInputDialog("Ingrese opcion \n"
+                            + "1-Empleado \n"
+                            + "2-Clientes \n");
+                    switch(){
+                        
+                    }
                 }
                 break;
                 case "3": {
