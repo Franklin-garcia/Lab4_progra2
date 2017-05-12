@@ -18,6 +18,9 @@ public class Lab4_progra2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+<<<<<<< HEAD
+        
+=======
         ArrayList<Persona> lista_persona = new ArrayList();
         ArrayList<Almacen> lista_almacen = new ArrayList();
         ArrayList<Producto> lista_producto = new ArrayList();
@@ -40,6 +43,7 @@ public class Lab4_progra2 {
             }
             
         }
+>>>>>>> 4437e5c7da6b69a5d3d7c0a9b347324e92d8a72b
     }
     
 }

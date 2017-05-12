@@ -11,13 +11,14 @@ import java.util.ArrayList;
  *
  * @author Franklin Garcia
  */
-public class Almacen {
-    private ArrayList<empleado_carga>lista_cargador=new ArrayList();
-    private ArrayList<empleado_seguridad>lista_empleado=new ArrayList();
-    private ArrayList<Producto>lista_producot=new ArrayList();
+public abstract class Almacen {
+
+    private ArrayList<empleado_carga> lista_cargador = new ArrayList();
+    private ArrayList<empleado_seguridad> lista_empleado = new ArrayList();
+    private ArrayList<Producto> lista_producot = new ArrayList();
     private int tamaño_metros;
     private int altura;
-    private ArrayList<Cliente>lista_clientes=new ArrayList();
+    private ArrayList<Cliente> lista_clientes = new ArrayList();
 
     public Almacen() {
     }
@@ -75,10 +76,24 @@ public class Almacen {
         this.lista_clientes = lista_clientes;
     }
 
-
     @Override
     public String toString() {
         return "Almacen{" + "lista_cargador=" + lista_cargador + ", lista_empleado=" + lista_empleado + ", lista_producot=" + lista_producot + ", tama\u00f1o_metros=" + tamaño_metros + ", altura=" + altura + ", lista_clientes=" + lista_clientes + '}';
     }
+
+    public abstract String[][] riel(String codigo);
+
+    public abstract String transposicion();
+
+    public abstract String binario();
+
+    public abstract void vigenere();
+
+    public abstract void adelantaposiciones();
+
+    public abstract void encriptadomatrices();
+
+    public abstract void declaraciondealfabeto();
     
+
 }
