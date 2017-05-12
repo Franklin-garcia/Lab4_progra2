@@ -118,7 +118,7 @@ public class almacen_planta extends Almacen {
     @Override
     public String binario(String codigo) {
         String nuevo_codigo="",nuevo="";
-        for (int i = codigo.length()-1; i >0 ; i--) {
+        for (int i = codigo.length()-1; i >=0 ; i--) {
              nuevo_codigo+=codigo.charAt(i); 
         }
         int x=0;

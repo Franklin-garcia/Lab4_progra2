@@ -292,12 +292,90 @@ public class Lab4_progra2 {
                 }
                 break;
 
-               case "2": {
-                    String o=JOptionPane.showInputDialog("Ingrese opcion \n"
-                            + "1-Empleado \n"
-                            + "2-Clientes \n");
-                    switch(){
-                        
+                case "2": {
+                    String o = JOptionPane.showInputDialog("Ingrese opcion \n"
+                            + "1-Clientes \n"
+                            + "2-Empleado \n");
+                    switch (o) {
+                        case "1": {
+                            //nombre, ID, Edad, altura, peso y residencia.
+                            String g = JOptionPane.showInputDialog("Ingrese opcion \n"
+                                    + "1-Agregar \n"
+                                    + "2-Modificar \n"
+                                    + "3-Eliminar");
+                            if (g.equals("1")) {
+                                String nombre = JOptionPane.showInputDialog("Nombre");
+                                String id = JOptionPane.showInputDialog("ID");
+                                int edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+                                int altura = Integer.parseInt(JOptionPane.showInputDialog("altura"));
+                                int peso = Integer.parseInt(JOptionPane.showInputDialog("Peso"));
+                                String residencia = JOptionPane.showInputDialog("Residencia");
+
+                                int dinero = Integer.parseInt(JOptionPane.showInputDialog("Dinero"));
+                                JOptionPane.showMessageDialog(null, "Fecha en la que compro su primer producto");
+                                int dia = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dia de emision"));
+                                int mes = Integer.parseInt(JOptionPane.showInputDialog("Ingrese mes de emision"));
+                                int año = Integer.parseInt(JOptionPane.showInputDialog("Ingrese año de emision"));
+                                Date fecha;
+                                Calendar c = new GregorianCalendar(año, mes, dia);
+                                fecha = c.getTime();
+                                lista_persona.add(new Cliente(dinero, fecha, nombre, id, edad, altura, peso, residencia));
+                                JOptionPane.showMessageDialog(null, "Se agrego el cliente con exito");
+                            } else if (g.equals("2")) {
+                                String e = ";";
+                                for (Persona t : lista_persona) {
+                                    if (t instanceof Cliente) {
+                                        e += "\n" + lista_persona.indexOf(t) + " " + t;
+                                    }
+                                }
+                                JOptionPane.showMessageDialog(null, e);
+                                int pos = Integer.parseInt(JOptionPane.showInputDialog("Posicion"));
+
+                                String nombre = JOptionPane.showInputDialog("Nombre");
+                                String id = JOptionPane.showInputDialog("ID");
+                                int edad = Integer.parseInt(JOptionPane.showInputDialog("Edad"));
+                                int altura = Integer.parseInt(JOptionPane.showInputDialog("altura"));
+                                int peso = Integer.parseInt(JOptionPane.showInputDialog("Peso"));
+                                String residencia = JOptionPane.showInputDialog("Residencia");
+
+                                int dinero = Integer.parseInt(JOptionPane.showInputDialog("Dinero"));
+                                JOptionPane.showMessageDialog(null, "Fecha en la que compro su primer producto");
+                                int dia = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dia de emision"));
+                                int mes = Integer.parseInt(JOptionPane.showInputDialog("Ingrese mes de emision"));
+                                int año = Integer.parseInt(JOptionPane.showInputDialog("Ingrese año de emision"));
+                                Date fecha;
+                                Calendar c = new GregorianCalendar(año, mes, dia);
+                                fecha = c.getTime();
+
+                                ((Persona) lista_persona.get(pos)).setAltura(altura);
+                                ((Persona) lista_persona.get(pos)).setEdad(edad);
+                                ((Persona) lista_persona.get(pos)).setId(id);
+                                ((Persona) lista_persona.get(pos)).setNombre(nombre);
+                                ((Persona) lista_persona.get(pos)).setPeso(peso);
+                                ((Persona) lista_persona.get(pos)).setResidencia(residencia);
+                                JOptionPane.showMessageDialog(null, "Se modifico con exito");
+                            } else if (g.equals("3")) {
+                                String e = ";";
+                                for (Persona t : lista_persona) {
+                                    if (t instanceof Cliente) {
+                                        e += "\n" + lista_persona.indexOf(t) + " " + t;
+                                    }
+                                }
+                                JOptionPane.showMessageDialog(null, e);
+                                int pos = Integer.parseInt(JOptionPane.showInputDialog("Posicion"));
+                                lista_persona.remove(pos);
+                                JOptionPane.showMessageDialog(null, "Se elimino con exito");
+                            }
+
+                        }
+                        break;
+                        case "2": {
+                            String oo = JOptionPane.showInputDialog("Ingrese opcion \n"
+                                    + "1-Empleado de carta"
+                                    + "2-Empleado de seguridad");
+
+                        }
+                        break;
                     }
                 }
                 break;
