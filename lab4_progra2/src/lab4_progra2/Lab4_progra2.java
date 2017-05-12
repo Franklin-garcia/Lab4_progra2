@@ -32,26 +32,42 @@ public class Lab4_progra2 {
                     + "6-Salir \n");
             switch (opcion) {
                 case "1": {
-                    String op="";
-                    while(!op.equalsIgnoreCase("4")){
-                        op=JOptionPane.showInputDialog("Ingrese opcion \n"
+                    String op = "";
+                    while (!op.equalsIgnoreCase("4")) {
+                        op = JOptionPane.showInputDialog("Ingrese opcion \n"
                                 + "1-Almacen \n"
                                 + "2-Persona \n"
                                 + "3-Producto \n"
                                 + "4-Salir \n");
-                        switch(op){
-                            case "1":{
-                                
-                            }break;
-                            case "2":{
-                                
-                            }break;
-                            case "3":{
-                                
-                            }break;
+                        switch (op) {
+                            case "1": {
+                                String opp = JOptionPane.showInputDialog("Igrese opcion \n"
+                                        + "1-Planta\n"
+                                        + "2-Regiona \n"
+                                        + "3-Plataforma \n"
+                                        + "4-Temporal \n");
+                                if (opp.equals("1")) {
+
+                                } else if (opp.equals("2")) {
+
+                                } else if (op.equals("3")) {
+
+                                } else if (opp.equals("4")) {
+
+                                }
+                            }
+                            break;
+                            case "2": {
+
+                            }
+                            break;
+                            case "3": {
+
+                            }
+                            break;
                         }
                     }
-                    
+
                 }
                 break;
                 case "2": {
