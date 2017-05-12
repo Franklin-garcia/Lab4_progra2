@@ -47,7 +47,7 @@ public class almacen_planta extends Almacen {
 
         int suma = 1;
         int cont = 0;
-        
+
         for (int i = 0; i < codigo.length(); i++) {
             pos[i] = cont;
 
@@ -122,12 +122,27 @@ public class almacen_planta extends Almacen {
 
     @Override
     public void vigenere(String codigo, String clave) {
-        
+
     }
 
-    @Override
-    public void adelantaposiciones() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private int random_adelanta() {
+        Random ran = new Random();
+
+        int tamaño = 1 + ran.nextInt(9);
+        return tamaño;
+    }
+
+    public String adelantaposiciones(int tamaño, String codigo) {
+        String corrido = " ";
+        for (int i = 0; i < codigo.length(); i++) {
+            char a = (char) (codigo.charAt(i) + tamaño);
+            if (codigo.charAt(i) == ' ') {
+                corrido += " ";
+            } else {
+                corrido += a;
+            }
+        }
+        return corrido.replaceAll("$", " ");
     }
 
     @Override
