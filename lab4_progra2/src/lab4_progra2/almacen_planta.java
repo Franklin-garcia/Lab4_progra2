@@ -41,23 +41,29 @@ public class almacen_planta extends Almacen {
     @Override
     public String[][] riel(String codigo) {
 
-        Random rn = new Random();
-        String[][] encriptar = new String[codigo.length()][codigo.length()];
+        String[][] encriptar = new String[3][codigo.length()];
 
         int[] pos = new int[codigo.length()];
-        for (int i = 0; i < pos.length; i++) {
-            pos[i] = rn.nextInt(pos.length);
-            for (int j = 0; j < i; j++) {
 
-                if (pos[j] == pos[i]) {
-                    pos[i] = rn.nextInt(4);
-                    j = -1;
+        int suma = 1;
+        int cont = 0;
+        
+        for (int i = 0; i < codigo.length(); i++) {
+            pos[i] = cont;
 
-                }
+            cont += suma;
+            if (cont == 3) {
+                suma = -1;
+                cont = 1;
+            }
+            if (cont == -1) {
+                suma = 1;
+                cont = 1;
 
             }
 
         }
+
         for (int i = 0; i < codigo.length(); i++) {
             for (int j = 0; j < codigo.length(); j++) {
                 encriptar[i][j] = "-";
@@ -65,32 +71,35 @@ public class almacen_planta extends Almacen {
             encriptar[i][pos[i]] = "" + codigo.charAt(i);
         }
 
+        for (int i = 0; i < codigo.length(); i++) {
+            encriptar[pos[i]][i] = "" + codigo.charAt(i);
+        }
+
         return encriptar;
 
     }
 
     @Override
-    public String[][] transposicion(String codigo,String clave) {
+    public String[][] transposicion(String codigo, String clave) {
         Random rn = new Random();
         String[][] transposicion = new String[codigo.length()][codigo.length()];
-        
+
         int[] pos = new int[codigo.length()];
-        
+
         for (int i = 0; i < pos.length; i++) {
             pos[i] = rn.nextInt(pos.length);
             for (int j = 0; j < i; j++) {
-                
+
                 if (pos[j] == pos[i]) {
                     pos[i] = rn.nextInt(pos.length);
                     j = -1;
-                    
+
                 }
 
             }
 
         }
-        
-        
+
         String abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for (int i = 0; i < codigo.length(); i++) {
             for (int j = 0; j < codigo.length(); j++) {
@@ -101,9 +110,9 @@ public class almacen_planta extends Almacen {
             transposicion[pos[0]][i] = "" + codigo.charAt(i);
             transposicion[pos[1]][i] = "" + clave.charAt(i);
         }
-        
+
         return transposicion;
-        
+
     }
 
     @Override
@@ -112,8 +121,8 @@ public class almacen_planta extends Almacen {
     }
 
     @Override
-    public void vigenere() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void vigenere(String codigo, String clave) {
+        
     }
 
     @Override
@@ -123,12 +132,49 @@ public class almacen_planta extends Almacen {
 
     @Override
     public void encriptadomatrices() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
-    public void declaraciondealfabeto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String declaraciondealfabeto(String codigo) {
+        codigo = codigo.toLowerCase();
+        Random rn = new Random();
+        String newcodigo = "";
+        for (int i = 0; i < codigo.charAt(i); i++) {
+            char letra = codigo.charAt(i);
+
+            switch (letra) {
+                case 'A':
+                case 'B':
+                case 'C':
+                case 'D':
+                case 'E':
+                case 'F':
+                case 'G':
+                case 'H':
+                case 'I':
+                case 'J':
+                    newcodigo += "" + (1 + rn.nextInt(100));
+
+                    break;
+                case 'U':
+                case 'V':
+                case 'W':
+                case 'X':
+                case 'Y':
+                case 'Z':
+                    newcodigo += "" + (1 + rn.nextInt(100));
+
+                    break;
+                default:
+                    newcodigo += "" + letra;
+
+            }
+
+        }//fin del for
+
+        return newcodigo;
+
     }
 
 }
