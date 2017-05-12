@@ -11,6 +11,8 @@ package lab4_progra2;
  */
 public class empleado_seguridad extends Empleado{
 
+    private String contrasena;
+    
     public empleado_seguridad() {
     }
     
