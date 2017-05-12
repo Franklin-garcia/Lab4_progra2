@@ -373,7 +373,9 @@ public class Lab4_progra2 {
                             String oo = JOptionPane.showInputDialog("Ingrese opcion \n"
                                     + "1-Empleado de carta"
                                     + "2-Empleado de seguridad");
-
+                            switch(oo){
+                                
+                            }
                         }
                         break;
                     }
