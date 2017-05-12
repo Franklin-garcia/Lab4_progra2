@@ -75,7 +75,7 @@ public abstract class Almacen {
 
     public abstract String[][] riel(String codigo);
 
-    public abstract String transposicion();
+    public abstract String[][] transposicion(String codigo, String claves);
 
     public abstract String binario();
 
