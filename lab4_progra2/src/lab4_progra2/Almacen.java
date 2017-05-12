@@ -13,8 +13,7 @@ import java.util.ArrayList;
  */
 public abstract class Almacen {
 
-    private ArrayList<empleado_carga> lista_cargador = new ArrayList();
-    private ArrayList<empleado_seguridad> lista_empleado = new ArrayList();
+    private ArrayList<Empleado> lista_empleado=new ArrayList();
     private ArrayList<Producto> lista_producot = new ArrayList();
     private int tamaño_metros;
     private int altura;
@@ -28,19 +27,11 @@ public abstract class Almacen {
         this.altura = altura;
     }
 
-    public ArrayList<empleado_carga> getLista_cargador() {
-        return lista_cargador;
-    }
-
-    public void setLista_cargador(ArrayList<empleado_carga> lista_cargador) {
-        this.lista_cargador = lista_cargador;
-    }
-
-    public ArrayList<empleado_seguridad> getLista_empleado() {
+    public ArrayList<Empleado> getLista_empleado() {
         return lista_empleado;
     }
 
-    public void setLista_empleado(ArrayList<empleado_seguridad> lista_empleado) {
+    public void setLista_empleado(ArrayList<Empleado> lista_empleado) {
         this.lista_empleado = lista_empleado;
     }
 
@@ -78,8 +69,9 @@ public abstract class Almacen {
 
     @Override
     public String toString() {
-        return "Almacen{" + "lista_cargador=" + lista_cargador + ", lista_empleado=" + lista_empleado + ", lista_producot=" + lista_producot + ", tama\u00f1o_metros=" + tamaño_metros + ", altura=" + altura + ", lista_clientes=" + lista_clientes + '}';
+        return "Almacen{" + "lista_empleado=" + lista_empleado + ", lista_producot=" + lista_producot + ", tama\u00f1o_metros=" + tamaño_metros + ", altura=" + altura + ", lista_clientes=" + lista_clientes + '}';
     }
+    
 
     public abstract String[][] riel(String codigo);
 
