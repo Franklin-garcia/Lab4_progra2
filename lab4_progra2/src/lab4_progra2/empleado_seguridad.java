@@ -11,9 +11,19 @@ package lab4_progra2;
  */
 public class empleado_seguridad extends Empleado{
 
-    private String contrasena;
+  
     
     public empleado_seguridad() {
+        super();
+    }
+
+    public empleado_seguridad(String nombre, String id, int Edad, int altura, int peso, String residencia) {
+        super(nombre, id, Edad, altura, peso, residencia);
+    }
+
+    @Override
+    public String toString() {
+        return "empleado_seguridad{" + '}';
     }
     
 }
